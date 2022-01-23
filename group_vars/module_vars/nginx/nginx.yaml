@@ -1,0 +1,9 @@
+domain_name: new.diarier.com
+upstream_server: dummyapp
+servers: 
+  - dummy1:8081
+  - dummy2:8082
+  - dummy3:8083
+
+cert_path: /etc/letsencrypt
+data_dir:  /usr/share/nginx/html

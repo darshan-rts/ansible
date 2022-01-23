@@ -1,0 +1,11 @@
+nginxserver ansible_host=207.148.123.228 ansible_ssh_pass=DarshanPasswd
+dockercontainer ansible_host=nginxserver ansible_connection=docker
+localhost ansible_connection=local
+
+[server]
+localhost
+#nginxserver
+
+[nginx]
+dockercontainer
+

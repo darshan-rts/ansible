@@ -1,0 +1,8 @@
+dockerversion: "5:20.10.8~3-0~ubuntu-focal"
+composeversion: "1.29.2"
+src_path: vars/nginx
+dest_path: /etc/nginx
+nginx_conf_src: '{{ src_path }}/nginx.conf.n2'
+nginx_conf_dest: '{{ dest_path }}/nginx.conf'
+default_conf_src: '{{ src_path }}/default.conf.n2'
+default_conf_dest: '{{ dest_path }}/conf.d/default.conf'

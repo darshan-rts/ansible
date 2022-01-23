@@ -1,0 +1,23 @@
+- name: "Configure Nginx Server"
+  hosts: nginx
+  vars_files:
+    - 'vars/nginx.yaml'
+    - '{{ src_path }}/nginx.yaml'
+  tasks:
+    - name: 'Copy nginx.conf'
+      template:
+        src: '{{ nginx_conf_src }}'
+        dest: '{{ nginx_conf_dest }}'
+        unsafe_writes: yes
+
+    - name: 'Copy default.conf'
+      template: 
+        src: '{{ default_conf_src }}'
+        dest: '{{ default_conf_dest }}'
+        unsafe_writes: yes
+
+    - name: 'Reload nginx Server'
+      shell: nginx -s reload
+    
+    - name: 'Run cron job'
+      shell: cron
